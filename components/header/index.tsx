@@ -1,5 +1,5 @@
 import { useState, forwardRef, ForwardRefRenderFunction } from "react";
-import { Flex, IconButton, Collapse, Text } from "@chakra-ui/core";
+import { Flex, IconButton, Collapse, Text, Box } from "@chakra-ui/core";
 
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
@@ -14,7 +14,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
 ) => {
   const [showCollapse, setShowCollapse] = useState(true);
 
-  const changeHeight = () => {
+  const handleCollapse = () => {
     setShowCollapse((prev) => !prev);
   };
 
@@ -27,38 +27,45 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       ref={ref}
       backgroundColor="green.300"
     >
-      <Flex my={4} w="100%" flexDir={{ xs: "column", md: "row" }}>
-        <Flex flexGrow={1} justify="space-between" align="center">
-          <Text as="h1">Hello</Text>
+      <Flex
+        my={4}
+        w="100%"
+        flexDir="row"
+        justify="space-between"
+        alignItems="center"
+        flexWrap={{ xs: "wrap", md: "nowrap" }}
+      >
+        <Text as="h1">Hello</Text>
 
-          <IconButton
-            onClick={changeHeight}
-            display={{ md: "none" }}
-            aria-label="toggle navigation collapse"
-            icon="arrow-up-down"
-          >
-            Change
-          </IconButton>
-        </Flex>
+        <IconButton
+          onClick={handleCollapse}
+          display={{ md: "none" }}
+          aria-label=""
+          icon="arrow-up-down"
+        >
+          Change
+        </IconButton>
 
-        <Collapse isOpen={showCollapse} duration={300} animateOpacity={true}>
-          <Flex
-            as="ul"
-            flexDir={{ xs: "column", md: "row" }}
-            listStyleType="none"
-            css={css`
-              @media screen and (min-width: 48em) {
-                li:not(:last-child) {
-                  margin-right: 0.5rem;
+        <Box as="nav" flexBasis={{ xs: "100%", md: "auto" }}>
+          <Collapse isOpen={showCollapse} duration={400} animateOpacity={true}>
+            <Flex
+              as="ul"
+              flexDir={{ xs: "column", md: "row" }}
+              listStyleType="none"
+              css={css`
+                @media screen and (min-width: 48em) {
+                  li:not(:last-child) {
+                    margin-right: 0.5rem;
+                  }
                 }
-              }
-            `}
-          >
-            <li>Hello</li>
-            <li>Saya</li>
-            <li>Zaky</li>
-          </Flex>
-        </Collapse>
+              `}
+            >
+              <li>Hello</li>
+              <li>Saya</li>
+              <li>Zaky</li>
+            </Flex>
+          </Collapse>
+        </Box>
       </Flex>
     </Flex>
   );
