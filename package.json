@@ -11,10 +11,13 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@types/react-transition-group": "^4.4.0",
     "emotion-theming": "^10.0.27",
     "next": "latest",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-transition-group": "^4.4.1",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
