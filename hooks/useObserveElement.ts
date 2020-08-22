@@ -3,13 +3,13 @@ import ResizeObserver from "resize-observer-polyfill";
 
 export default function useObserveElement(
   el: RefObject<Element>,
-  prop: keyof Omit<DOMRect, "toJSON">
+  prop: "clientWidth" | "clientHeight"
 ) {
   const [value, setValue] = useState(0);
 
   const observer = useRef(
     new ResizeObserver((entries) => {
-      const val = entries[0].contentRect[prop];
+      const val = entries[0].target[prop];
       setValue(val);
     })
   );
@@ -19,6 +19,7 @@ export default function useObserveElement(
 
     observer.current.observe(el.current);
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return () => observer.current.unobserve(el.current!);
   }, [el, observer]);
 

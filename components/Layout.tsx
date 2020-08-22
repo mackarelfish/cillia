@@ -1,9 +1,9 @@
 import { useRef, ReactNode, useState, createContext } from "react";
-import { Flex, Button, Collapse } from "@chakra-ui/core";
-import Link from "next/link";
+import { Flex, Button, Collapse, Text } from "@chakra-ui/core";
 import Head from "next/head";
 
 import useObserveElement from "../hooks/useObserveElement";
+import Header from "../components/header/index";
 
 type Props = {
   children?: ReactNode;
@@ -18,14 +18,8 @@ const Layout = ({
   title = "This is the default title",
   navPosition = "initial",
 }: Props) => {
-  const [showText, setShowText] = useState(true);
-
-  const changeHeight = () => {
-    setShowText((prev) => !prev);
-  };
-
   const headerRef = useRef<HTMLElement>(null);
-  const navHeight = useObserveElement(headerRef, "height");
+  const navHeight = useObserveElement(headerRef, "clientHeight");
 
   return (
     <div
@@ -37,40 +31,7 @@ const Layout = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <header
-        style={{
-          position: navPosition,
-          width: "100%",
-        }}
-        ref={headerRef}
-      >
-        <nav>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{" "}
-          |{" "}
-          <Link href="/about">
-            <a>About</a>
-          </Link>{" "}
-          |{" "}
-          <Link href="/users">
-            <a>Users List</a>
-          </Link>{" "}
-          | <a href="/api/users">Users API</a>
-          <Button onClick={changeHeight} display="block">
-            Change
-          </Button>
-        </nav>
-        <Collapse isOpen={showText} duration={10} animateOpacity={true}>
-          <Flex as="ul" my={2} flexDir="column">
-            <li>Hello</li>
-            <li>Hello</li>
-            <li>Hello2</li>
-            <li>Hello3</li>
-            <li>HelloKitty</li>
-          </Flex>
-        </Collapse>
-      </header>
+      <Header ref={headerRef} position={navPosition} />
 
       <Flex as="main" flexGrow={1} direction="column">
         <LayoutContext.Provider value={{ navHeight }}>
