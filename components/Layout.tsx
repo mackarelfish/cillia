@@ -27,7 +27,7 @@ const Layout = ({
   navPosition = "initial",
 }: Props) => {
   const headerRef = useRef<HTMLElement>(null);
-  const navHeight = useObserveElement(headerRef, ["height", "top"]);
+  const navHeight = useObserveElement(headerRef, ["height"]);
 
   const [hideNav, setHideNav] = useState(false);
   const handleHideNav = () => {

@@ -10,7 +10,6 @@ export default function useObserveElement(
   const observer = useRef(
     new ResizeObserver((entries) => {
       let accu = 0;
-      console.log(entries[0].contentRect);
       for (const prop of props) {
         accu += entries[0].target.getBoundingClientRect()[prop];
       }

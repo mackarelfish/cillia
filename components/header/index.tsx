@@ -14,7 +14,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
   { position = "initial", hidden = false }: Props,
   ref
 ) => {
-  const [showCollapse, setShowCollapse] = useState(true);
+  const [showCollapse, setShowCollapse] = useState(false);
   const handleCollapse = () => {
     setShowCollapse((prev) => !prev);
   };
@@ -25,6 +25,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       zIndex={999}
       pos={position}
       top={hidden ? "-100%" : "0"}
+      transition="all 1s ease"
       width="100%"
       ref={ref}
       backgroundColor="green.300"
