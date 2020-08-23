@@ -1,20 +1,24 @@
-import { RefObject, useRef, useState, useLayoutEffect } from "react";
+import { RefObject, useRef, useState, useEffect } from "react";
 import ResizeObserver from "resize-observer-polyfill";
 
 export default function useObserveElement(
   el: RefObject<Element>,
-  prop: "clientWidth" | "clientHeight"
+  props: (keyof Omit<DOMRect, "toJSON">)[]
 ) {
   const [value, setValue] = useState(0);
 
   const observer = useRef(
     new ResizeObserver((entries) => {
-      const val = entries[0].target[prop];
-      setValue(val);
+      let accu = 0;
+      console.log(entries[0].contentRect);
+      for (const prop of props) {
+        accu += entries[0].target.getBoundingClientRect()[prop];
+      }
+      setValue(accu);
     })
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!el.current) return;
 
     observer.current.observe(el.current);

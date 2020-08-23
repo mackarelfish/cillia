@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Box, Button } from "@chakra-ui/core";
+import Link from "next/link";
 
 import Layout, { LayoutContext } from "../components/Layout";
 
 const IndexPage = () => {
-  const [layout, setLayout] = useState<"fixed" | "absolute">("fixed");
-
+  const layout = "absolute";
   return (
     <Layout title="Home | Next.js + TypeScript Example" navPosition={layout}>
       <LayoutContext.Consumer>
-        {({ navHeight }) => (
+        {({ navHeight, handleHideNav }) => (
           <>
             <Box
               as="section"
@@ -22,18 +22,15 @@ const IndexPage = () => {
               backgroundPosition="center"
             >
               <Box backgroundColor="green.500">This is a box</Box>
-              <h1>Hello</h1>
-              <Button
-                onClick={() =>
-                  setLayout((p) => (p === "fixed" ? "absolute" : "fixed"))
-                }
-              >
-                Change layout
-              </Button>
+              <Link href="/about">
+                <h1>Hello</h1>
+              </Link>
+              <Button onClick={handleHideNav}>Change layout</Button>
             </Box>
             <Box as="section" minH="100vh">
-              <Box backgroundColor="green.500">This is a box</Box>
-              <h1>Hello</h1>
+              <Box backgroundColor="green.500">
+                This is a box skjadkajsdkjaksd
+              </Box>
             </Box>
           </>
         )}

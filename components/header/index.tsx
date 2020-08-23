@@ -1,19 +1,20 @@
 import { useState, forwardRef, ForwardRefRenderFunction } from "react";
 import { Flex, IconButton, Collapse, Text, Box } from "@chakra-ui/core";
+import Link from "next/link";
 
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 
 type Props = {
   position?: "initial" | "absolute" | "fixed";
+  hidden?: boolean;
 };
 
 const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
-  { position = "initial" }: Props,
+  { position = "initial", hidden = false }: Props,
   ref
 ) => {
   const [showCollapse, setShowCollapse] = useState(true);
-
   const handleCollapse = () => {
     setShowCollapse((prev) => !prev);
   };
@@ -23,6 +24,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       as="header"
       zIndex={999}
       pos={position}
+      top={hidden ? "-100%" : "0"}
       width="100%"
       ref={ref}
       backgroundColor="green.300"
@@ -60,9 +62,21 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
                 }
               `}
             >
-              <li>Hello</li>
-              <li>Saya</li>
-              <li>Zaky</li>
+              <li>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/users">
+                  <a>Users</a>
+                </Link>
+              </li>
             </Flex>
           </Collapse>
         </Box>

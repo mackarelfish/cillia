@@ -1,5 +1,5 @@
-import { useRef, ReactNode, useState, createContext } from "react";
-import { Flex, Button, Collapse, Text } from "@chakra-ui/core";
+import { useRef, ReactNode, createContext, useState } from "react";
+import { Flex } from "@chakra-ui/core";
 import Head from "next/head";
 
 import useObserveElement from "../hooks/useObserveElement";
@@ -11,7 +11,15 @@ type Props = {
   navPosition?: "initial" | "absolute" | "fixed";
 };
 
-export const LayoutContext = createContext({ navHeight: 0 });
+type DefaultLayoutContextProps = {
+  navHeight: number;
+  handleHideNav?: () => void;
+};
+
+export const LayoutContext = createContext<DefaultLayoutContextProps>({
+  navHeight: 0,
+  handleHideNav: undefined,
+});
 
 const Layout = ({
   children,
@@ -19,7 +27,12 @@ const Layout = ({
   navPosition = "initial",
 }: Props) => {
   const headerRef = useRef<HTMLElement>(null);
-  const navHeight = useObserveElement(headerRef, "clientHeight");
+  const navHeight = useObserveElement(headerRef, ["height", "top"]);
+
+  const [hideNav, setHideNav] = useState(false);
+  const handleHideNav = () => {
+    setHideNav((prev) => !prev);
+  };
 
   return (
     <div
@@ -31,10 +44,10 @@ const Layout = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Header ref={headerRef} position={navPosition} />
+      <Header ref={headerRef} position={navPosition} hidden={hideNav} />
 
       <Flex as="main" flexGrow={1} direction="column">
-        <LayoutContext.Provider value={{ navHeight }}>
+        <LayoutContext.Provider value={{ navHeight, handleHideNav }}>
           {children}
         </LayoutContext.Provider>
       </Flex>
