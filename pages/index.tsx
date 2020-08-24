@@ -5,7 +5,7 @@ import Layout, { LayoutContext } from "../components/Layout";
 
 const IndexPage = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example" navPosition="absolute">
+    <Layout title="Home | Next.js + TypeScript Example" navPosition="fixed">
       <LayoutContext.Consumer>
         {({ navHeight, handleHideNav }) => (
           <>

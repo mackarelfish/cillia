@@ -4,12 +4,7 @@ import Head from "next/head";
 
 import useObserveElement from "../hooks/useObserveElement";
 import Header from "../components/header/index";
-
-type Props = {
-  children?: ReactNode;
-  title?: string;
-  navPosition?: "initial" | "absolute" | "fixed";
-};
+import { useScrollPosition } from "../hooks/useScrollPosition";
 
 type DefaultLayoutContextProps = {
   navHeight: number;
@@ -20,6 +15,12 @@ export const LayoutContext = createContext<DefaultLayoutContextProps>({
   navHeight: 0,
   handleHideNav: undefined,
 });
+
+type Props = {
+  children?: ReactNode;
+  title?: string;
+  navPosition?: "initial" | "absolute" | "fixed";
+};
 
 const Layout = ({
   children,
@@ -33,6 +34,22 @@ const Layout = ({
   const handleHideNav = () => {
     setHideNav((prev) => !prev);
   };
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y < prevPos.y;
+
+      if (currPos.y >= -300) {
+        setHideNav(false);
+      } else {
+        if (isShow !== hideNav) setHideNav(isShow);
+      }
+    },
+    [hideNav],
+    null,
+    false,
+    100
+  );
 
   return (
     <div
