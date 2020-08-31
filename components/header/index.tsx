@@ -1,34 +1,85 @@
-import { useState, forwardRef, ForwardRefRenderFunction } from "react";
+import {
+  useState,
+  forwardRef,
+  ForwardRefRenderFunction,
+  useEffect,
+} from "react";
 import { Flex, IconButton, Collapse, Text, Box } from "@chakra-ui/core";
 import Link from "next/link";
 
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import useGetWindowWidth from "../../hooks/useGetWindowWidth";
+import styled from "@emotion/styled";
 
 type Props = {
   position?: "initial" | "absolute" | "fixed";
   hidden?: boolean;
+  isTop?: boolean;
+  scrollUp?: boolean;
 };
 
+const CilliaHeader = styled(Flex)`
+  position: ${(props) => props.position};
+
+  &.scroll {
+    transform: translateY(-100%);
+    padding: 0;
+    position: fixed;
+
+    &.show {
+      transform: translateY(0);
+    }
+  }
+
+  &.trans {
+    transition: transform 0.3s ease;
+  }
+
+  @media screen and (min-width: 48em) {
+    .cillia__nav > li:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+`;
+
 const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
-  { position = "initial", hidden = false }: Props,
+  {
+    position = "initial",
+    hidden = false,
+    isTop = true,
+    scrollUp = false,
+  }: Props,
   ref
 ) => {
+  const windowWidth = useGetWindowWidth();
   const [showCollapse, setShowCollapse] = useState(false);
   const handleCollapse = () => {
     setShowCollapse((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (windowWidth > 768) setShowCollapse(true);
+    else setShowCollapse(false);
+  }, [windowWidth]);
+
   return (
-    <Flex
+    <CilliaHeader
       as="header"
+      position={position}
       zIndex={999}
-      pos={position}
-      transform={`translateY(${hidden ? "-100%" : "0"})`}
-      transition="all 0.3s ease"
       width="100%"
       ref={ref}
       backgroundColor="green.300"
+      className={`${
+        !isTop
+          ? hidden
+            ? "trans scroll"
+            : "trans scroll show"
+          : hidden
+          ? scrollUp
+            ? "scroll trans"
+            : "scroll"
+          : ""
+      }`}
     >
       <Flex
         my={4}
@@ -38,7 +89,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
         alignItems="center"
         flexWrap={{ xs: "wrap", md: "nowrap" }}
       >
-        <Text as="h1">Hello</Text>
+        <Text as="h1">{scrollUp ? "up" : "down"}</Text>
 
         <IconButton
           onClick={handleCollapse}
@@ -55,13 +106,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
               as="ul"
               flexDir={{ xs: "column", md: "row" }}
               listStyleType="none"
-              css={css`
-                @media screen and (min-width: 48em) {
-                  li:not(:last-child) {
-                    margin-right: 0.5rem;
-                  }
-                }
-              `}
+              className="cillia__nav"
             >
               <li>
                 <Link href="/">
@@ -82,7 +127,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
           </Collapse>
         </Box>
       </Flex>
-    </Flex>
+    </CilliaHeader>
   );
 };
 
