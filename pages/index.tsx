@@ -1,13 +1,13 @@
-import { Box, Button } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/core";
 import Link from "next/link";
 
 import Layout, { LayoutContext } from "../components/Layout";
 
 const IndexPage = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example" navPosition="fixed">
+    <Layout title="Home | Next.js + TypeScript Example" navPosition="absolute">
       <LayoutContext.Consumer>
-        {({ navHeight, handleHideNav }) => (
+        {({ navHeight }) => (
           <>
             <Box
               as="section"
@@ -23,7 +23,6 @@ const IndexPage = () => {
               <Link href="/about">
                 <h1>Hello</h1>
               </Link>
-              <Button onClick={handleHideNav}>Change layout</Button>
             </Box>
             <Box as="section" minH="100vh">
               <Box backgroundColor="green.500">

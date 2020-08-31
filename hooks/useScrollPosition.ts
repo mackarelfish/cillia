@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, RefObject } from "react";
+import { useRef, useEffect, RefObject } from "react";
 
 const isBrowser = typeof window !== `undefined`;
 
@@ -42,7 +42,7 @@ export function useScrollPosition(
     throttleTimeout = null;
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (wait) {
         if (throttleTimeout === null) {
