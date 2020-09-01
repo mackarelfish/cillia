@@ -18,7 +18,6 @@ const CilliaHeader = styled(Flex)`
     transform: translateY(-100%);
     padding: 0;
     position: fixed;
-    background-color: white;
 
     &.show {
       transform: translateY(0);
@@ -26,7 +25,17 @@ const CilliaHeader = styled(Flex)`
   }
 
   &.trans {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
+  }
+
+  .cillia__nav > {
+    &li a {
+      transition: border 0.2s ease;
+    }
+
+    &li a:hover {
+      border-bottom: 1px solid black;
+    }
   }
 
   @media screen and (min-width: 48em) {
@@ -70,7 +79,8 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       zIndex={999}
       width="100%"
       ref={ref}
-      backgroundColor="tomato"
+      backgroundColor="white"
+      borderBottom="1px solid #E2E8F0"
       className={`${
         !isTop
           ? hidden

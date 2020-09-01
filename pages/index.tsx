@@ -49,6 +49,7 @@ const IndexPage = () => {
                 </Grid>
               </Wrapper>
             </Flex>
+
             <Flex>
               <Wrapper>
                 <Box h="100vh">Hello</Box>
