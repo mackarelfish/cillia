@@ -1,5 +1,4 @@
-import { Box, Flex } from "@chakra-ui/core";
-import Link from "next/link";
+import { Box, Flex, Grid } from "@chakra-ui/core";
 
 import Layout, { LayoutContext } from "../components/Layout";
 import Wrapper from "../components/Wrapper";
@@ -12,35 +11,49 @@ const IndexPage = () => {
           <>
             <Flex
               as="section"
-              height="100vh"
-              maxH={{ xs: "812px", md: "1000px" }}
-              flexDir={{ base: "column", md: "row" }}
+              flexGrow={1}
               paddingTop={`${navHeight}px`}
-              backgroundColor="tomato"
-              transition="padding ease"
+              minH="100vh"
             >
-              <Flex
-                flexDir="column"
-                flexBasis={{ base: "45%", md: "55%" }}
-                minH="200px"
-              >
-                <h1>This is a box</h1>
-              </Flex>
-              <Flex
-                flexGrow={1}
-                backgroundImage="url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80)"
-                backgroundSize="cover"
-                backgroundPosition="center"
-                overflow="hidden"
-              >
-                <h1>This is another box</h1>
-              </Flex>
+              <Wrapper flexGrow={1}>
+                <Grid
+                  gridTemplateRows="minmax(400px, 1.5fr) 1fr"
+                  h="100%"
+                  minH="700px"
+                  maxH="850px"
+                  gridGap="20px"
+                >
+                  <Flex backgroundColor="green.100">
+                    <h1>Hello</h1>
+                  </Flex>
+                  <Grid
+                    gridTemplateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                    gridGap="20px"
+                  >
+                    <Flex backgroundColor="red.100">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Modi eveniet temporibus quam consequuntur. In quisquam
+                      repellendus iste fugit odio nam.
+                    </Flex>
+                    <Flex backgroundColor="red.100">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Modi eveniet temporibus quam consequuntur. In quisquam
+                      repellendus iste fugit odio nam.
+                    </Flex>
+                    <Flex backgroundColor="red.100">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Modi eveniet temporibus quam consequuntur. In quisquam
+                      repellendus iste fugit odio nam.
+                    </Flex>
+                  </Grid>
+                </Grid>
+              </Wrapper>
             </Flex>
-            <Box as="section" minH="100vh">
-              <Box backgroundColor="green.500">
-                This is a box skjadkajsdkjaksd
-              </Box>
-            </Box>
+            <Flex>
+              <Wrapper>
+                <Box h="100vh">Hello</Box>
+              </Wrapper>
+            </Flex>
           </>
         )}
       </LayoutContext.Consumer>

@@ -70,7 +70,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       zIndex={999}
       width="100%"
       ref={ref}
-      backgroundColor="white"
+      backgroundColor="tomato"
       className={`${
         !isTop
           ? hidden
