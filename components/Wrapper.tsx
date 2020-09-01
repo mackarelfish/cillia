@@ -2,10 +2,11 @@ import { Flex } from "@chakra-ui/core";
 
 type Props = {
   children: React.ReactNode;
+  props?: any;
 };
 
 // eslint-disable-next-line react/prop-types
-const Wrapper: React.FC<Props> = ({ children }) => {
+const Wrapper: React.FC<Props> = ({ children, ...props }) => {
   return (
     <Flex
       flexDir="column"
@@ -13,6 +14,7 @@ const Wrapper: React.FC<Props> = ({ children }) => {
       px="1.5em"
       width="100%"
       maxW={["auto", "640px", "768px", "1024px", "1280px"]}
+      {...props}
     >
       {children}
     </Flex>

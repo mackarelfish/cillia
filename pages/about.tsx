@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Flex } from "@chakra-ui/core";
+import { Flex, Box } from "@chakra-ui/core";
 
 import Layout from "../components/Layout";
 
@@ -7,8 +7,12 @@ const AboutPage = () => (
   <Layout>
     <Flex direction="column" flexGrow={1}>
       <Flex flexGrow={1} direction="column">
-        <h1>About</h1>
-        <p>This is the about page</p>
+        <Box minH="100vh">
+          <h1>Hello</h1>
+        </Box>
+        <Box minH="100vh">
+          <h1>Hi</h1>
+        </Box>
       </Flex>
       <p>
         <Link href="/">

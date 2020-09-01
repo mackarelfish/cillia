@@ -9,13 +9,7 @@ import Link from "next/link";
 
 import useGetWindowWidth from "../../hooks/useGetWindowWidth";
 import styled from "@emotion/styled";
-
-type Props = {
-  position?: "initial" | "absolute" | "fixed";
-  hidden?: boolean;
-  isTop?: boolean;
-  scrollUp?: boolean;
-};
+import Wrapper from "../Wrapper";
 
 const CilliaHeader = styled(Flex)`
   position: ${(props) => props.position};
@@ -24,6 +18,7 @@ const CilliaHeader = styled(Flex)`
     transform: translateY(-100%);
     padding: 0;
     position: fixed;
+    background-color: white;
 
     &.show {
       transform: translateY(0);
@@ -40,6 +35,13 @@ const CilliaHeader = styled(Flex)`
     }
   }
 `;
+
+type Props = {
+  position?: "initial" | "absolute" | "fixed";
+  hidden?: boolean;
+  isTop?: boolean;
+  scrollUp?: boolean;
+};
 
 const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
   {
@@ -68,7 +70,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
       zIndex={999}
       width="100%"
       ref={ref}
-      backgroundColor="green.300"
+      backgroundColor="white"
       className={`${
         !isTop
           ? hidden
@@ -81,52 +83,58 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
           : ""
       }`}
     >
-      <Flex
-        my={4}
-        w="100%"
-        flexDir="row"
-        justify="space-between"
-        alignItems="center"
-        flexWrap={{ xs: "wrap", md: "nowrap" }}
-      >
-        <Text as="h1">{scrollUp ? "up" : "down"}</Text>
-
-        <IconButton
-          onClick={handleCollapse}
-          display={{ md: "none" }}
-          aria-label=""
-          icon="arrow-up-down"
+      <Wrapper>
+        <Flex
+          my={4}
+          w="100%"
+          flexDir="row"
+          justify="space-between"
+          alignItems="center"
+          flexWrap={{ xs: "wrap", md: "nowrap" }}
         >
-          Change
-        </IconButton>
+          <Text as="h1">{scrollUp ? "up" : "down"}</Text>
 
-        <Box as="nav" flexBasis={{ xs: "100%", md: "auto" }}>
-          <Collapse isOpen={showCollapse} duration={400} animateOpacity={true}>
-            <Flex
-              as="ul"
-              flexDir={{ xs: "column", md: "row" }}
-              listStyleType="none"
-              className="cillia__nav"
+          <IconButton
+            onClick={handleCollapse}
+            display={{ md: "none" }}
+            aria-label=""
+            icon="arrow-up-down"
+          >
+            Change
+          </IconButton>
+
+          <Box as="nav" flexBasis={{ xs: "100%", md: "auto" }}>
+            <Collapse
+              isOpen={showCollapse}
+              duration={400}
+              animateOpacity={true}
             >
-              <li>
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a>About</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/users">
-                  <a>Users</a>
-                </Link>
-              </li>
-            </Flex>
-          </Collapse>
-        </Box>
-      </Flex>
+              <Flex
+                as="ul"
+                flexDir={{ xs: "column", md: "row" }}
+                listStyleType="none"
+                className="cillia__nav"
+              >
+                <li>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a>About</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/users">
+                    <a>Users</a>
+                  </Link>
+                </li>
+              </Flex>
+            </Collapse>
+          </Box>
+        </Flex>
+      </Wrapper>
     </CilliaHeader>
   );
 };
