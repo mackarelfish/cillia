@@ -4,15 +4,16 @@ import {
   ForwardRefRenderFunction,
   useEffect,
 } from "react";
-import { Flex, IconButton, Collapse, Text, Box } from "@chakra-ui/core";
-import Link from "next/link";
+import { Flex, Collapse, Text, Box } from "@chakra-ui/core";
+import styled from "@emotion/styled";
 
 import useGetWindowWidth from "../../hooks/useGetWindowWidth";
-import styled from "@emotion/styled";
 import Wrapper from "../Wrapper";
+import ActiveLink from "../ActiveLink";
 
 const CilliaHeader = styled(Flex)`
   position: ${(props) => props.position};
+  font-family: "Muli";
 
   &.scroll {
     transform: translateY(-100%);
@@ -29,18 +30,29 @@ const CilliaHeader = styled(Flex)`
   }
 
   .cillia__nav > {
-    &li a {
+    &li a.cillia__navitem {
       transition: border 0.2s ease;
+      font-size: 14px;
+      text-transform: uppercase;
     }
 
-    &li a:hover {
+    &li a:hover,
+    &li a.cillia__navitem.selected {
       border-bottom: 1px solid black;
     }
   }
 
+  .cillia__logo {
+    width: 45px;
+  }
+
+  .cillia__logotext {
+    font-family: "Cormorant Garamond";
+  }
+
   @media screen and (min-width: 48em) {
     .cillia__nav > li:not(:last-child) {
-      margin-right: 0.5rem;
+      margin-right: 1rem;
     }
   }
 `;
@@ -68,7 +80,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
   };
 
   useEffect(() => {
-    if (windowWidth > 768) setShowCollapse(true);
+    if (windowWidth >= 768) setShowCollapse(true);
     else setShowCollapse(false);
   }, [windowWidth]);
 
@@ -102,16 +114,30 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
           alignItems="center"
           flexWrap={{ xs: "wrap", md: "nowrap" }}
         >
-          <Text as="h1">{scrollUp ? "up" : "down"}</Text>
+          <Flex alignItems="center">
+            <img
+              src="/images/cillia_logo_only.png"
+              alt="logo"
+              className="cillia__logo"
+            />
+            <Text className="cillia__logotext" fontSize="22px" ml="8px">
+              Cillia Lashes
+            </Text>
+          </Flex>
 
-          <IconButton
+          <Flex
+            as="a"
             onClick={handleCollapse}
+            cursor="pointer"
             display={{ md: "none" }}
-            aria-label=""
-            icon="arrow-up-down"
           >
-            Change
-          </IconButton>
+            <Box
+              as="span"
+              display="block"
+              className="lnr lnr-menu"
+              style={{ fontSize: "24px" }}
+            ></Box>
+          </Flex>
 
           <Box as="nav" flexBasis={{ xs: "100%", md: "auto" }}>
             <Collapse
@@ -126,19 +152,19 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
                 className="cillia__nav"
               >
                 <li>
-                  <Link href="/">
-                    <a>Home</a>
-                  </Link>
+                  <ActiveLink href="/">
+                    <a className="cillia__navitem">Home</a>
+                  </ActiveLink>
                 </li>
                 <li>
-                  <Link href="/about">
-                    <a>About</a>
-                  </Link>
+                  <ActiveLink href="/about">
+                    <a className="cillia__navitem">About</a>
+                  </ActiveLink>
                 </li>
                 <li>
-                  <Link href="/users">
-                    <a>Users</a>
-                  </Link>
+                  <ActiveLink href="/users">
+                    <a className="cillia__navitem">Catalogue</a>
+                  </ActiveLink>
                 </li>
               </Flex>
             </Collapse>

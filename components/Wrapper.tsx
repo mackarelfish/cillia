@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/core";
 
 type Props = {
   children: React.ReactNode;
-  props?: any;
+  [props: string]: any;
 };
 
 // eslint-disable-next-line react/prop-types

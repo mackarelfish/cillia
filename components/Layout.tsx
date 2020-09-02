@@ -65,6 +65,18 @@ const Layout = ({
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Muli"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cormorant%20Garamond"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+        />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
