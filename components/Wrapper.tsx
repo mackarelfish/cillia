@@ -13,7 +13,7 @@ const Wrapper: React.FC<Props> = ({ children, ...props }) => {
       m="0 auto"
       px="1.5em"
       width="100%"
-      maxW={["auto", "640px", "768px", "1024px", "1280px"]}
+      maxW={["auto", "640px", "860px", "1024px", "1280px"]}
       {...props}
     >
       {children}

@@ -11,8 +11,9 @@ const IndexPage = () => {
           <>
             <Flex
               as="section"
+              minH={{ md: "800px" }}
               height={{ md: "100vh" }}
-              maxH={{ md: "950px" }}
+              maxH={{ md: "1000px" }}
               flexGrow={1}
               paddingTop={`${navHeight}px`}
               background="url('https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png')"
@@ -20,10 +21,10 @@ const IndexPage = () => {
               <Wrapper flexGrow={1}>
                 <Grid
                   gridTemplateRows={{
-                    base: "minmax(400px, 500px) auto",
-                    md: "minmax(400px, 600px) auto",
+                    base: "minmax(350px, 500px) auto",
                   }}
                   h="100%"
+                  py="20px"
                   maxH={{ md: "900px" }}
                   gridGap="20px"
                 >
@@ -38,7 +39,12 @@ const IndexPage = () => {
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
-                          fontSize={{ base: "30px", sm: "35px", md: "30px" }}
+                          fontSize={{
+                            base: "30px",
+                            sm: "35px",
+                            md: "26px",
+                            xl: "30px",
+                          }}
                         >
                           Upper Lashes
                         </Text>
@@ -55,7 +61,12 @@ const IndexPage = () => {
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
-                          fontSize={{ base: "30px", sm: "35px", md: "30px" }}
+                          fontSize={{
+                            base: "30px",
+                            sm: "35px",
+                            md: "26px",
+                            xl: "30px",
+                          }}
                         >
                           Lower Lashes
                         </Text>
@@ -72,7 +83,12 @@ const IndexPage = () => {
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
-                          fontSize={{ base: "30px", sm: "35px", md: "30px" }}
+                          fontSize={{
+                            base: "30px",
+                            sm: "35px",
+                            md: "26px",
+                            xl: "30px",
+                          }}
                         >
                           Exclusive Series
                         </Text>
@@ -105,7 +121,8 @@ const IndexPage = () => {
                   <Grid
                     gridTemplateColumns={{
                       base: "1fr",
-                      md: "repeat(2, 1fr)",
+                      sm: "repeat(2, 1fr)",
+                      md: "repeat(3, 1fr)",
                       xl: "repeat(4, 1fr)",
                     }}
                     gridGap="20px"
