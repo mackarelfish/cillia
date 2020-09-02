@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text, SimpleGrid } from "@chakra-ui/core";
+import { Box, Flex, Grid, Text } from "@chakra-ui/core";
 
 import Layout, { LayoutContext } from "../components/Layout";
 import Wrapper from "../components/Wrapper";
@@ -21,7 +21,7 @@ const IndexPage = () => {
               <Wrapper flexGrow={1}>
                 <Grid
                   gridTemplateRows={{
-                    base: "minmax(350px, 500px) auto",
+                    base: "minmax(350px, 550px) minmax(200px, auto)",
                   }}
                   h="100%"
                   py="20px"
