@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text } from "@chakra-ui/core";
+import { Box, Flex, Grid, Text, SimpleGrid } from "@chakra-ui/core";
 
 import Layout, { LayoutContext } from "../components/Layout";
 import Wrapper from "../components/Wrapper";
@@ -11,6 +11,8 @@ const IndexPage = () => {
           <>
             <Flex
               as="section"
+              height={{ md: "100vh" }}
+              maxH={{ md: "950px" }}
               flexGrow={1}
               paddingTop={`${navHeight}px`}
               background="url('https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png')"
@@ -19,11 +21,10 @@ const IndexPage = () => {
                 <Grid
                   gridTemplateRows={{
                     base: "minmax(400px, 500px) auto",
-                    md: "minmax(400px, 700px) auto",
+                    md: "minmax(400px, 600px) auto",
                   }}
                   h="100%"
                   maxH={{ md: "900px" }}
-                  paddingY="20px"
                   gridGap="20px"
                 >
                   <Flex backgroundColor="#cf8273">
@@ -33,7 +34,7 @@ const IndexPage = () => {
                     gridTemplateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                     gridGap="20px"
                   >
-                    <Flex backgroundColor="#385038" minH="300px" color="white">
+                    <Flex backgroundColor="#385038" color="white">
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
@@ -50,7 +51,7 @@ const IndexPage = () => {
                         </Text>
                       </Flex>
                     </Flex>
-                    <Flex backgroundColor="#573649" minH="300px" color="white">
+                    <Flex backgroundColor="#573649" color="white">
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
@@ -67,7 +68,7 @@ const IndexPage = () => {
                         </Text>
                       </Flex>
                     </Flex>
-                    <Flex backgroundColor="red.700" minH="300px" color="white">
+                    <Flex backgroundColor="red.700" color="white">
                       <Flex justifyContent="flex-end" flexDir="column" p="2em">
                         <Text
                           fontFamily="Cormorant Garamond"
@@ -89,9 +90,98 @@ const IndexPage = () => {
               </Wrapper>
             </Flex>
 
-            <Flex>
+            <Flex as="section">
               <Wrapper>
-                <Box h="100vh">Hello</Box>
+                <Flex flexDir="column" pt="110px">
+                  <Text
+                    fontFamily="Cormorant Garamond"
+                    fontSize={{ base: "3xl", md: "5xl" }}
+                    pb="1em"
+                    textAlign="center"
+                  >
+                    Popular Products
+                  </Text>
+
+                  <Grid
+                    gridTemplateColumns={{
+                      base: "1fr",
+                      md: "repeat(2, 1fr)",
+                      xl: "repeat(4, 1fr)",
+                    }}
+                    gridGap="20px"
+                    justifyContent="space-between"
+                  >
+                    <Flex flexDir="column">
+                      <Flex flexDir="column">
+                        <Box height="400px" backgroundColor="tomato"></Box>
+                        <Flex flexDir="column" py="1em">
+                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
+                            Leather Jacket
+                          </Text>
+                          <Text fontSize="sm" fontFamily="Muli">
+                            Upper Lashes
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+
+                    <Flex flexDir="column">
+                      <Flex flexDir="column">
+                        <Box height="400px" backgroundColor="tomato"></Box>
+                        <Flex flexDir="column" py="1em">
+                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
+                            Leather Jacket
+                          </Text>
+                          <Text fontSize="sm" fontFamily="Muli">
+                            Upper Lashes
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+
+                    <Flex flexDir="column">
+                      <Flex flexDir="column">
+                        <Box height="400px" backgroundColor="tomato"></Box>
+                        <Flex flexDir="column" py="1em">
+                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
+                            Leather Jacket
+                          </Text>
+                          <Text fontSize="sm" fontFamily="Muli">
+                            Upper Lashes
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+
+                    <Flex flexDir="column">
+                      <Flex flexDir="column">
+                        <Box height="400px" backgroundColor="tomato"></Box>
+                        <Flex flexDir="column" py="1em">
+                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
+                            Leather Jacket
+                          </Text>
+                          <Text fontSize="sm" fontFamily="Muli">
+                            Upper Lashes
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+
+                    <Flex flexDir="column">
+                      <Flex flexDir="column">
+                        <Box height="400px" backgroundColor="tomato"></Box>
+                        <Flex flexDir="column" py="1em">
+                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
+                            Leather Jacket
+                          </Text>
+                          <Text fontSize="sm" fontFamily="Muli">
+                            Upper Lashes
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  </Grid>
+                </Flex>
               </Wrapper>
             </Flex>
           </>
