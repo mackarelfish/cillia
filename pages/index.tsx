@@ -4,10 +4,12 @@ import Layout, { LayoutContext } from "../components/Layout";
 import Wrapper from "../components/Wrapper";
 
 const IndexPage = () => {
+  const navPosition = "absolute";
+
   return (
-    <Layout title="Home | Next.js + TypeScript Example" navPosition="absolute">
+    <Layout title="Cillia Lashes | Home" navPosition={navPosition}>
       <LayoutContext.Consumer>
-        {({ navHeight }) => (
+        {({ navHeight, isTop }) => (
           <>
             <Flex
               as="section"
@@ -15,13 +17,15 @@ const IndexPage = () => {
               height={{ md: "100vh" }}
               maxH={{ md: "1000px" }}
               flexGrow={1}
-              paddingTop={`${navHeight}px`}
+              paddingTop={
+                navPosition === "absolute" && isTop ? `${navHeight}px` : ""
+              }
               background="url('https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png')"
             >
               <Wrapper flexGrow={1}>
                 <Grid
                   gridTemplateRows={{
-                    base: "minmax(350px, 550px) minmax(200px, auto)",
+                    base: "minmax(350px, 550px) minmax(240px, auto)",
                   }}
                   h="100%"
                   py="20px"

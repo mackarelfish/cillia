@@ -26,7 +26,7 @@ const CilliaHeader = styled(Flex)`
   }
 
   &.trans {
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
   }
 
   .cillia__nav > {

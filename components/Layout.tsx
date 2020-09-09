@@ -9,11 +9,13 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 type DefaultLayoutContextProps = {
   navHeight: number;
   handleHideNav?: () => void;
+  isTop: boolean;
 };
 
 export const LayoutContext = createContext<DefaultLayoutContextProps>({
   navHeight: 0,
   handleHideNav: undefined,
+  isTop: true,
 });
 
 type Props = {
@@ -89,7 +91,7 @@ const Layout = ({
       />
 
       <Flex as="main" flexGrow={1} direction="column">
-        <LayoutContext.Provider value={{ navHeight, handleHideNav }}>
+        <LayoutContext.Provider value={{ navHeight, handleHideNav, isTop }}>
           {children}
         </LayoutContext.Provider>
       </Flex>
