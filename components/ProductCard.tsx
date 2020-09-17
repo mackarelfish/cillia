@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from "@chakra-ui/core";
+import { Box, Flex, Text } from "@chakra-ui/core";
 import { useRouter } from "next/router";
 
 interface Props {

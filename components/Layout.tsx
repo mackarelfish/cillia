@@ -1,9 +1,8 @@
-import { useRef, ReactNode, createContext, useState } from "react";
 import { Flex, Text } from "@chakra-ui/core";
 import Head from "next/head";
-
-import useObserveElement from "../hooks/useObserveElement";
+import { createContext, ReactNode, useRef, useState } from "react";
 import Header from "../components/header/index";
+import useObserveElement from "../hooks/useObserveElement";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Wrapper from "./Wrapper";
 

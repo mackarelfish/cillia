@@ -1,4 +1,4 @@
-import { Flex, Grid, Text, Button, Box } from "@chakra-ui/core";
+import { Flex, Grid, Text, Button } from "@chakra-ui/core";
 import Link from "next/link";
 
 import Layout, { LayoutContext } from "../components/Layout";

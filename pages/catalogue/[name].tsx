@@ -1,10 +1,8 @@
+import { Box, Grid, Text } from "@chakra-ui/core";
 import { useRouter } from "next/router";
-import { Text, Grid, Box } from "@chakra-ui/core";
-
 import Layout, { LayoutContext } from "../../components/Layout";
-import Wrapper from "../../components/Wrapper";
 import ProductCard from "../../components/ProductCard";
-
+import Wrapper from "../../components/Wrapper";
 import SectionData from "../../public/data/section.json";
 
 const Catalogue = () => {
