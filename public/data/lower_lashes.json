@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "img": "adirustana4.png",
+      "title": "Adi Rustana 4",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "candy.png",
+      "title": "Candy",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "eliza.png",
+      "title": "Eliza",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "haifa.png",
+      "title": "Haifa",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "rania.png",
+      "title": "Rania",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "hana.png",
+      "title": "Hana",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "halona.png",
+      "title": "Halona",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "nuga.png",
+      "title": "Nuga",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "lala.png",
+      "title": "Lala",
+      "type": "Lower Lashes",
+      "price": "10000",
+      "link": ""
+    },
+    {
+      "img": "yara.png",
+      "title": "Yara",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yuki.png",
+      "title": "Yuki",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yusra.png",
+      "title": "Yusra",
+      "type": "Lower Lashes",
+      "price": "100000",
+      "link": ""
+    }
+  ]
+}

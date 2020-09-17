@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "img": "adi_rustana_1.jpg",
+      "title": "Adi Rustana 1",
+      "type": "Paket MUA",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "adi_rustana_promo.jpg",
+      "title": "Adi Rustana Promo",
+      "type": "Paket MUA",
+      "price": "250000",
+      "link": ""
+    },
+    {
+      "img": "adi_rustana_2.jpg",
+      "title": "Adi Rustana 2",
+      "type": "Paket MUA",
+      "price": "100000",
+      "link": ""
+    }
+  ]
+}

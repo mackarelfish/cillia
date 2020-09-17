@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import useGetWindowWidth from "../../hooks/useGetWindowWidth";
 import Wrapper from "../Wrapper";
 import ActiveLink from "../ActiveLink";
+import { useRouter } from "next/router";
 
 const CilliaHeader = styled(Flex)`
   position: ${(props) => props.position};
@@ -73,6 +74,8 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
   }: Props,
   ref
 ) => {
+  const router = useRouter();
+
   const windowWidth = useGetWindowWidth();
   const [showCollapse, setShowCollapse] = useState(false);
   const handleCollapse = () => {
@@ -114,7 +117,11 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
           alignItems="center"
           flexWrap={{ xs: "wrap", md: "nowrap" }}
         >
-          <Flex alignItems="center">
+          <Flex
+            alignItems="center"
+            onClick={() => router.push("/")}
+            cursor="pointer"
+          >
             <img
               src="/images/cillia_logo_only.png"
               alt="logo"
@@ -157,12 +164,7 @@ const Header: ForwardRefRenderFunction<HTMLElement, Props> = (
                   </ActiveLink>
                 </li>
                 <li>
-                  <ActiveLink href="/about">
-                    <a className="cillia__navitem">About</a>
-                  </ActiveLink>
-                </li>
-                <li>
-                  <ActiveLink href="/users">
+                  <ActiveLink href="/catalogue">
                     <a className="cillia__navitem">Catalogue</a>
                   </ActiveLink>
                 </li>

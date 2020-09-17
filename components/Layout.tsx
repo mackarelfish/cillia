@@ -1,10 +1,11 @@
 import { useRef, ReactNode, createContext, useState } from "react";
-import { Flex } from "@chakra-ui/core";
+import { Flex, Text } from "@chakra-ui/core";
 import Head from "next/head";
 
 import useObserveElement from "../hooks/useObserveElement";
 import Header from "../components/header/index";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import Wrapper from "./Wrapper";
 
 type DefaultLayoutContextProps = {
   navHeight: number;
@@ -27,7 +28,7 @@ type Props = {
 const Layout = ({
   children,
   title = "This is the default title",
-  navPosition = "initial",
+  navPosition = "absolute",
 }: Props) => {
   const headerRef = useRef<HTMLElement>(null);
   const navHeight = useObserveElement(headerRef, ["height"]);
@@ -96,9 +97,13 @@ const Layout = ({
         </LayoutContext.Provider>
       </Flex>
 
-      <footer>
+      <footer style={{ paddingTop: "110px" }}>
         <hr />
-        <span>I'm here to stay (Footer)</span>
+        <Wrapper>
+          <Flex height="60px" alignItems="center" justifyContent="flex-end">
+            <Text>Cillia Lashes © | 2020</Text>
+          </Flex>
+        </Wrapper>
       </footer>
     </div>
   );

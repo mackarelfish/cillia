@@ -1,7 +1,9 @@
-import { Box, Flex, Grid, Text } from "@chakra-ui/core";
+import { Flex, Grid, Text, Button, Box } from "@chakra-ui/core";
+import Link from "next/link";
 
 import Layout, { LayoutContext } from "../components/Layout";
 import Wrapper from "../components/Wrapper";
+import ProductCard from "../components/ProductCard";
 
 const IndexPage = () => {
   const navPosition = "absolute";
@@ -9,31 +11,55 @@ const IndexPage = () => {
   return (
     <Layout title="Cillia Lashes | Home" navPosition={navPosition}>
       <LayoutContext.Consumer>
-        {({ navHeight, isTop }) => (
+        {({ navHeight }) => (
           <>
             <Flex
               as="section"
               minH={{ md: "800px" }}
               height={{ md: "100vh" }}
-              maxH={{ md: "1000px" }}
+              maxH={{ md: "850px", xl: "1000px" }}
               flexGrow={1}
-              paddingTop={
-                navPosition === "absolute" && isTop ? `${navHeight}px` : ""
-              }
+              paddingTop={navPosition === "absolute" ? `${navHeight}px` : ""}
               background="url('https://www.toptal.com/designers/subtlepatterns/patterns/so-white.png')"
             >
               <Wrapper flexGrow={1}>
                 <Grid
                   gridTemplateRows={{
-                    base: "minmax(350px, 550px) minmax(240px, auto)",
+                    base: "minmax(470px, 550px) minmax(240px, auto)",
+                    xl: "minmax(350px, 550px) minmax(240px, 300px)",
                   }}
                   h="100%"
                   py="20px"
-                  maxH={{ md: "900px" }}
+                  maxH={{ md: "800px", xl: "1000px" }}
                   gridGap="20px"
                 >
-                  <Flex backgroundColor="#cf8273">
-                    <h1>Hello</h1>
+                  <Flex
+                    background="url('/images/cillia_main.png')"
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems={{ base: "center", md: "flex-start" }}
+                    backgroundRepeat="no-repeat"
+                    backgroundSize="cover"
+                    backgroundPosition="26% 0"
+                  >
+                    <Flex
+                      paddingLeft={{ md: "4em" }}
+                      flexDir="column"
+                      alignItems={{ md: "flex-start" }}
+                    >
+                      <Text
+                        fontFamily="Cormorant Garamond"
+                        textAlign={{ base: "center", md: "initial" }}
+                        fontSize={{ base: "35px", md: 50 }}
+                        color="white"
+                      >
+                        Bulu mata menawan, <br />
+                        praktis digunakan.
+                      </Text>
+                      <Link href="/catalogue">
+                        <Button marginTop="20px">Lihat Katalog</Button>
+                      </Link>
+                    </Flex>
                   </Flex>
                   <Grid
                     gridTemplateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
@@ -52,13 +78,19 @@ const IndexPage = () => {
                         >
                           Upper Lashes
                         </Text>
-                        <Text
-                          fontFamily="Muli"
-                          fontSize="14px"
-                          textTransform="uppercase"
+                        <Link
+                          as="/catalogue/upper_lashes"
+                          href="/catalogue/[name]"
                         >
-                          Shop Now
-                        </Text>
+                          <Text
+                            fontFamily="Muli"
+                            fontSize="12px"
+                            textTransform="uppercase"
+                            cursor="pointer"
+                          >
+                            See Catalogue
+                          </Text>
+                        </Link>
                       </Flex>
                     </Flex>
                     <Flex backgroundColor="#573649" color="white">
@@ -74,13 +106,19 @@ const IndexPage = () => {
                         >
                           Lower Lashes
                         </Text>
-                        <Text
-                          fontFamily="Muli"
-                          fontSize="14px"
-                          textTransform="uppercase"
+                        <Link
+                          as="/catalogue/lower_lashes"
+                          href="/catalogue/[name]"
                         >
-                          Shop Now
-                        </Text>
+                          <Text
+                            fontFamily="Muli"
+                            fontSize="12px"
+                            textTransform="uppercase"
+                            cursor="pointer"
+                          >
+                            See Catalogue
+                          </Text>
+                        </Link>
                       </Flex>
                     </Flex>
                     <Flex backgroundColor="red.700" color="white">
@@ -96,13 +134,19 @@ const IndexPage = () => {
                         >
                           Exclusive Series
                         </Text>
-                        <Text
-                          fontFamily="Muli"
-                          fontSize="14px"
-                          textTransform="uppercase"
+                        <Link
+                          as="/catalogue/exclusive_series"
+                          href="/catalogue/[name]"
                         >
-                          Shop Now
-                        </Text>
+                          <Text
+                            fontFamily="Muli"
+                            fontSize="12px"
+                            textTransform="uppercase"
+                            cursor="pointer"
+                          >
+                            See Catalogue
+                          </Text>
+                        </Link>
                       </Flex>
                     </Flex>
                   </Grid>
@@ -132,75 +176,24 @@ const IndexPage = () => {
                     gridGap="20px"
                     justifyContent="space-between"
                   >
-                    <Flex flexDir="column">
-                      <Flex flexDir="column">
-                        <Box height="400px" backgroundColor="tomato"></Box>
-                        <Flex flexDir="column" py="1em">
-                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
-                            Leather Jacket
-                          </Text>
-                          <Text fontSize="sm" fontFamily="Muli">
-                            Upper Lashes
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </Flex>
-
-                    <Flex flexDir="column">
-                      <Flex flexDir="column">
-                        <Box height="400px" backgroundColor="tomato"></Box>
-                        <Flex flexDir="column" py="1em">
-                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
-                            Leather Jacket
-                          </Text>
-                          <Text fontSize="sm" fontFamily="Muli">
-                            Upper Lashes
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </Flex>
-
-                    <Flex flexDir="column">
-                      <Flex flexDir="column">
-                        <Box height="400px" backgroundColor="tomato"></Box>
-                        <Flex flexDir="column" py="1em">
-                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
-                            Leather Jacket
-                          </Text>
-                          <Text fontSize="sm" fontFamily="Muli">
-                            Upper Lashes
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </Flex>
-
-                    <Flex flexDir="column">
-                      <Flex flexDir="column">
-                        <Box height="400px" backgroundColor="tomato"></Box>
-                        <Flex flexDir="column" py="1em">
-                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
-                            Leather Jacket
-                          </Text>
-                          <Text fontSize="sm" fontFamily="Muli">
-                            Upper Lashes
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </Flex>
-
-                    <Flex flexDir="column">
-                      <Flex flexDir="column">
-                        <Box height="400px" backgroundColor="tomato"></Box>
-                        <Flex flexDir="column" py="1em">
-                          <Text fontFamily="Cormorant Garamond" fontSize="2xl">
-                            Leather Jacket
-                          </Text>
-                          <Text fontSize="sm" fontFamily="Muli">
-                            Upper Lashes
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    </Flex>
+                    <ProductCard
+                      type="Upper Lashes"
+                      title="Adi Rustana 1"
+                      img="adi_rustana_1.jpg"
+                      slug="adi_rustana_1"
+                    />
+                    <ProductCard
+                      type="Paket MUA"
+                      title="Adi Rustana"
+                      img="adi_rustana_promo.jpg"
+                      slug="adi_rustana_promo"
+                    />
+                    <ProductCard
+                      type="Paket MUA"
+                      title="Adi Rustana 2"
+                      img="adi_rustana_2.jpg"
+                      slug="adi_rustana_2"
+                    />
                   </Grid>
                 </Flex>
               </Wrapper>
