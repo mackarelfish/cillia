@@ -5,7 +5,7 @@ import Wrapper from "../../components/Wrapper";
 
 const CatalogueIndex = () => {
   return (
-    <Layout>
+    <Layout title="Cillia | Catalogue">
       <LayoutContext.Consumer>
         {({ navHeight }) => (
           <>

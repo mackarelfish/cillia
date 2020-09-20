@@ -1,27 +1,12 @@
 import { Box, Grid, Text } from "@chakra-ui/core";
-import { useRouter } from "next/router";
 import Layout, { LayoutContext } from "../../components/Layout";
 import ProductCard from "../../components/ProductCard";
 import Wrapper from "../../components/Wrapper";
 import SectionData from "../../public/data/section.json";
 
-const Catalogue = () => {
-  const router = useRouter();
-  const { name } = router.query;
-
-  let data;
-  if (name === "lower_lashes")
-    data = require("../../public/data/lower_lashes.json");
-  else if (name === "upper_lashes")
-    data = require("../../public/data/upper_lashes.json");
-  else if (name === "exclusive_series")
-    data = require("../../public/data/exclusive_series.json");
-
-  let section;
-  if (typeof name === "string") section = SectionData[name];
-
+const Catalogue = ({ section, data }) => {
   return (
-    <Layout>
+    <Layout title={"Cillia | " + section}>
       <LayoutContext.Consumer>
         {({ navHeight }) => (
           <>
@@ -70,5 +55,28 @@ const Catalogue = () => {
     </Layout>
   );
 };
+
+export function getStaticPaths() {
+  const routes = ["lower_lashes", "upper_lashes", "exclusive_series"];
+  return {
+    paths: routes.map((r) => ({ params: { name: r } })),
+    fallback: false,
+  };
+}
+
+export function getStaticProps({ params }) {
+  let data: unknown;
+  if (params.name === "lower_lashes")
+    data = require("../../public/data/lower_lashes.json");
+  else if (params.name === "upper_lashes")
+    data = require("../../public/data/upper_lashes.json");
+  else if (params.name === "exclusive_series")
+    data = require("../../public/data/exclusive_series.json");
+
+  let section: string;
+  if (typeof params.name === "string") section = SectionData[params.name];
+
+  return { props: { data, section } };
+}
 
 export default Catalogue;

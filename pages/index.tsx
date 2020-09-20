@@ -177,22 +177,22 @@ const IndexPage = () => {
                     justifyContent="space-between"
                   >
                     <ProductCard
-                      type="Upper Lashes"
-                      title="Adi Rustana 1"
+                      type="Adi Rustana"
+                      title="Series: Bold"
                       img="adi_rustana_1.jpg"
-                      slug="adi_rustana_1"
+                      slug="adirustana_series_bold"
                     />
                     <ProductCard
-                      type="Paket MUA"
-                      title="Adi Rustana"
-                      img="adi_rustana_promo.jpg"
-                      slug="adi_rustana_promo"
+                      type="Yolanda"
+                      title="Series: Bold"
+                      img="yolanda_bold_front.jpg"
+                      slug="yolanda_series_bold"
                     />
                     <ProductCard
-                      type="Paket MUA"
-                      title="Adi Rustana 2"
-                      img="adi_rustana_2.jpg"
-                      slug="adi_rustana_2"
+                      type="Ari Izam"
+                      title="Series: Bold"
+                      img="ari_izam_front.jpg"
+                      slug="ari_series_bold"
                     />
                   </Grid>
                 </Flex>

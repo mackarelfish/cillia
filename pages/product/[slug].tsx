@@ -9,7 +9,7 @@ import ExcluesiveSeries from "../../public/data/exclusive_series.json";
 
 const Product = ({ product }) => {
   return (
-    <Layout>
+    <Layout title={"Cillia | " + product.type}>
       <LayoutContext.Consumer>
         {({ navHeight }) => (
           <Wrapper paddingTop={`${navHeight}px`}>
@@ -35,11 +35,19 @@ const Product = ({ product }) => {
                     {product.title}
                   </Text>
                   <Text as="p" fontSize="25px">
-                    {product.price}Rp / set
+                    {product.price}Rp / set (4 pasang)
                   </Text>
                   <Box marginTop="2em">
                     <p>Note: Pembelian dapat di mix sampai dengan 4 tipe.</p>
-                    <Button marginTop="2em">Checkout di Shopee</Button>
+                    <a
+                      href={
+                        product.link ||
+                        "https://shopee.co.id/shop/33994536/search"
+                      }
+                      target="blank"
+                    >
+                      <Button marginTop="2em">Checkout di shopee</Button>
+                    </a>
                   </Box>
                 </Box>
               </Flex>

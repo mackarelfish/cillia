@@ -1,23 +1,240 @@
 {
   "items": [
     {
-      "img": "adi_rustana_1.jpg",
-      "title": "Adi Rustana 1",
-      "type": "Paket MUA",
+      "img": "adan_series_boneka.png",
+      "title": "Series: Boneka",
+      "type": "Adan Anapha",
       "price": "100000",
       "link": ""
     },
     {
-      "img": "adi_rustana_promo.jpg",
-      "title": "Adi Rustana Promo",
-      "type": "Paket MUA",
-      "price": "250000",
+      "img": "adan_series_pengantin.png",
+      "title": "Series: Pengantin",
+      "type": "Adan Anapha",
+      "price": "100000",
       "link": ""
     },
     {
-      "img": "adi_rustana_2.jpg",
-      "title": "Adi Rustana 2",
-      "type": "Paket MUA",
+      "img": "adirustana_series_arabian.png",
+      "title": "Series: Arabian",
+      "type": "Adi Rustana",
+      "price": "100000",
+      "link": "https://shopee.co.id/Paket-Bulu-Mata-MUA-Adi-Rustana-Arabian-Look-i.33994536.2056160481"
+    },
+    {
+      "img": "adirustana_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Adi Rustana",
+      "price": "100000",
+      "link": "https://shopee.co.id/Cillialash-Series-Adi-Rustana-i.33994536.1738601913"
+    },
+    {
+      "img": "arif_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Arif Garut",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "arif_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Arif Garut",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "ari_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Ari Izam",
+      "price": "100000",
+      "link": "https://shopee.co.id/Cillialash-x-Ari-Izam-i.33994536.4706139043"
+    },
+    {
+      "img": "bennu_series_workshop.png",
+      "title": "Series: Workshop",
+      "type": "Bennu Sorumba",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "bima_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Bima Chang",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "bima_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Bima Chang",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "dhani_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Makeoverby Dhani",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "dhani_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Makeoverby Dhani",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "dhani_series_mediumbold.png",
+      "title": "Series: Medium Bold",
+      "type": "Makeoverby Dhani",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "dhani_series_mediumflawless.png",
+      "title": "Series: Medium Flawless",
+      "type": "Makeoverby Dhani",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "dhirman_series_monolid.png",
+      "title": "Series: Monolid",
+      "type": "Dhirman Putra",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "diqin_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Diqin Rias",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "diqin_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Diqin Rias",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "hdw_series_2.png",
+      "title": "Series: II",
+      "type": "HDW Makeup",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "hdw_series.png",
+      "title": "Series",
+      "type": "HDW Makeup",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "heru_series.png",
+      "title": "Series",
+      "type": "Hera MUA",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "iis_series_barbie.png",
+      "title": "Series: Barbie",
+      "type": "Iis Yunerli",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "iis_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Iis Yunerli",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "lilis_series.png",
+      "title": "Series",
+      "type": "Lilis Haryati",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "merryika_series.png",
+      "title": "Series",
+      "type": "Merryika",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "ndalem_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Ndalem Manten",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "ndalem_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Ndalem Manten",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "prosper_series.png",
+      "title": "Series",
+      "type": "Prospera Wedding",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "rio_series.png",
+      "title": "Series",
+      "type": "Rio Harlen",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "toraja_series.png",
+      "title": "Series",
+      "type": "Toraja",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "viz_series.png",
+      "title": "Series",
+      "type": "Vizilly",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yolanda_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": "https://shopee.co.id/Cillia-paket-yolanda-bold.-i.33994536.2844846514"
+    },
+    {
+      "img": "yolanda_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yolanda_series_flawless_rania.png",
+      "title": "Series: Flawless Rania",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yunita_series.png",
+      "title": "Series",
+      "type": "Yunita",
       "price": "100000",
       "link": ""
     }
