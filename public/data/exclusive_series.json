@@ -1,20 +1,6 @@
 {
   "items": [
     {
-      "img": "adan_series_boneka.png",
-      "title": "Series: Boneka",
-      "type": "Adan Anapha",
-      "price": "100000",
-      "link": ""
-    },
-    {
-      "img": "adan_series_pengantin.png",
-      "title": "Series: Pengantin",
-      "type": "Adan Anapha",
-      "price": "100000",
-      "link": ""
-    },
-    {
       "img": "adirustana_series_arabian.png",
       "title": "Series: Arabian",
       "type": "Adi Rustana",
@@ -27,6 +13,27 @@
       "type": "Adi Rustana",
       "price": "100000",
       "link": "https://shopee.co.id/Cillialash-Series-Adi-Rustana-i.33994536.1738601913"
+    },
+    {
+      "img": "yolanda_series_bold.png",
+      "title": "Series: Bold",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": "https://shopee.co.id/Cillia-paket-yolanda-bold.-i.33994536.2844846514"
+    },
+    {
+      "img": "yolanda_series_flawless.png",
+      "title": "Series: Flawless",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "yolanda_series_flawless_rania.png",
+      "title": "Series: Flawless Rania",
+      "type": "Yolanda",
+      "price": "100000",
+      "link": ""
     },
     {
       "img": "arif_series_bold.png",
@@ -48,6 +55,20 @@
       "type": "Ari Izam",
       "price": "100000",
       "link": "https://shopee.co.id/Cillialash-x-Ari-Izam-i.33994536.4706139043"
+    },
+    {
+      "img": "adan_series_boneka.png",
+      "title": "Series: Boneka",
+      "type": "Adan Anapha",
+      "price": "100000",
+      "link": ""
+    },
+    {
+      "img": "adan_series_pengantin.png",
+      "title": "Series: Pengantin",
+      "type": "Adan Anapha",
+      "price": "100000",
+      "link": ""
     },
     {
       "img": "bennu_series_workshop.png",
@@ -207,27 +228,6 @@
       "img": "viz_series.png",
       "title": "Series",
       "type": "Vizilly",
-      "price": "100000",
-      "link": ""
-    },
-    {
-      "img": "yolanda_series_bold.png",
-      "title": "Series: Bold",
-      "type": "Yolanda",
-      "price": "100000",
-      "link": "https://shopee.co.id/Cillia-paket-yolanda-bold.-i.33994536.2844846514"
-    },
-    {
-      "img": "yolanda_series_flawless.png",
-      "title": "Series: Flawless",
-      "type": "Yolanda",
-      "price": "100000",
-      "link": ""
-    },
-    {
-      "img": "yolanda_series_flawless_rania.png",
-      "title": "Series: Flawless Rania",
-      "type": "Yolanda",
       "price": "100000",
       "link": ""
     },
